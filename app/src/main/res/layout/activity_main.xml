@@ -10,15 +10,17 @@
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
         android:src="@drawable/wedding_picture"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_marginTop="-40dp">
 
         <TextView
             android:id="@+id/boendeText"
@@ -26,38 +28,46 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/boende"
+            android:textAllCaps="true"
             app:layout_constraintBottom_toTopOf="@+id/boendeButton"
             app:layout_constraintEnd_toEndOf="@+id/boendeButton"
             app:layout_constraintStart_toStartOf="@+id/boendeButton" />
 
         <ImageButton
             android:id="@+id/boendeButton"
+            android:src="@drawable/home"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="24dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/klädkodButton"
+            app:layout_constraintRight_toLeftOf="@id/kladkodButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/önskelistaButton"
+            app:layout_constraintBottom_toTopOf="@id/onskelistaButton"
             tools:text="Boende" />
 
         <TextView
-            android:id="@+id/önskelistaText"
+            android:id="@+id/onskelistaText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/önskelista"
-            app:layout_constraintBottom_toTopOf="@+id/önskelistaButton"
-            app:layout_constraintEnd_toEndOf="@+id/önskelistaButton"
-            app:layout_constraintStart_toStartOf="@+id/önskelistaButton" />
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/onskelistaButton"
+            app:layout_constraintEnd_toEndOf="@+id/onskelistaButton"
+            app:layout_constraintStart_toStartOf="@+id/onskelistaButton" />
 
         <ImageButton
-            android:id="@+id/önskelistaButton"
+            android:id="@+id/onskelistaButton"
+            android:src="@drawable/giftbox"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="28dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/körschemaButton"
+            app:layout_constraintRight_toLeftOf="@id/korschemaButton"
             app:layout_constraintTop_toBottomOf="@+id/boendeButton"
             app:layout_constraintBottom_toTopOf="@id/bordsplaceringButton"
             tools:text="Önskelista" />
@@ -68,60 +78,72 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/bordsplacering"
+            android:textAllCaps="true"
             app:layout_constraintBottom_toTopOf="@+id/bordsplaceringButton"
             app:layout_constraintEnd_toEndOf="@+id/bordsplaceringButton"
             app:layout_constraintStart_toStartOf="@+id/bordsplaceringButton" />
 
         <ImageButton
             android:id="@+id/bordsplaceringButton"
+            android:src="@drawable/chair"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="20dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/platsButton"
-            app:layout_constraintTop_toBottomOf="@id/önskelistaButton"
+            app:layout_constraintTop_toBottomOf="@id/onskelistaButton"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="Bordsplacering" />
 
         <TextView
-            android:id="@+id/klädkodText"
+            android:id="@+id/kladkodText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/klädkod"
-            app:layout_constraintBottom_toTopOf="@+id/klädkodButton"
-            app:layout_constraintEnd_toEndOf="@+id/klädkodButton"
-            app:layout_constraintStart_toStartOf="@+id/klädkodButton" />
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/kladkodButton"
+            app:layout_constraintEnd_toEndOf="@+id/kladkodButton"
+            app:layout_constraintStart_toStartOf="@+id/kladkodButton" />
 
         <ImageButton
-            android:id="@+id/klädkodButton"
+            android:id="@+id/kladkodButton"
+            android:src="@drawable/dress"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="20dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:layout_constraintLeft_toRightOf="@id/boendeButton"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/körschemaButton"
+            app:layout_constraintBottom_toTopOf="@id/korschemaButton"
             tools:text="klädkod" />
 
         <TextView
-            android:id="@+id/körschemaText"
+            android:id="@+id/korschemaText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/körschema"
-            app:layout_constraintBottom_toTopOf="@+id/körschemaButton"
-            app:layout_constraintEnd_toEndOf="@+id/körschemaButton"
-            app:layout_constraintStart_toStartOf="@+id/körschemaButton" />
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toTopOf="@+id/korschemaButton"
+            app:layout_constraintEnd_toEndOf="@+id/korschemaButton"
+            app:layout_constraintStart_toStartOf="@+id/korschemaButton" />
 
         <ImageButton
-            android:id="@+id/körschemaButton"
+            android:id="@+id/korschemaButton"
+            android:src="@drawable/car"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="20dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
-            app:layout_constraintLeft_toRightOf="@+id/önskelistaButton"
+            app:layout_constraintLeft_toRightOf="@+id/onskelistaButton"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/klädkodButton"
+            app:layout_constraintTop_toBottomOf="@id/kladkodButton"
             app:layout_constraintBottom_toTopOf="@id/platsButton"
             tools:text="körschema" />
 
@@ -131,18 +153,22 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/brawler"
             android:text="@string/plats"
+            android:textAllCaps="true"
             app:layout_constraintBottom_toTopOf="@+id/platsButton"
             app:layout_constraintEnd_toEndOf="@+id/platsButton"
             app:layout_constraintStart_toStartOf="@+id/platsButton" />
 
         <ImageButton
             android:id="@+id/platsButton"
+            android:src="@drawable/maps"
             android:background="@drawable/rounded_icons"
+            android:scaleType="centerInside"
+            android:padding="26dp"
             android:layout_width="120dp"
             android:layout_height="120dp"
             app:layout_constraintLeft_toRightOf="@id/bordsplaceringButton"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/körschemaButton"
+            app:layout_constraintTop_toBottomOf="@id/korschemaButton"
             app:layout_constraintBottom_toBottomOf="parent"
             tools:text="plats" />
 
