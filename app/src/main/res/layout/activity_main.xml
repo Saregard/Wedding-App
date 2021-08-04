@@ -1,20 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/background_green">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/wedding_picture"
+        android:layout_gravity="center"/>
 
-    </androidx.cardview.widget.CardView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/boendeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/boende"
+            app:layout_constraintBottom_toTopOf="@+id/boendeButton"
+            app:layout_constraintEnd_toEndOf="@+id/boendeButton"
+            app:layout_constraintStart_toStartOf="@+id/boendeButton" />
+
+        <ImageButton
+            android:id="@+id/boendeButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/klädkodButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/önskelistaButton"
+            tools:text="Boende" />
+
+        <TextView
+            android:id="@+id/önskelistaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/önskelista"
+            app:layout_constraintBottom_toTopOf="@+id/önskelistaButton"
+            app:layout_constraintEnd_toEndOf="@+id/önskelistaButton"
+            app:layout_constraintStart_toStartOf="@+id/önskelistaButton" />
+
+        <ImageButton
+            android:id="@+id/önskelistaButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/körschemaButton"
+            app:layout_constraintTop_toBottomOf="@+id/boendeButton"
+            app:layout_constraintBottom_toTopOf="@id/bordsplaceringButton"
+            tools:text="Önskelista" />
+
+        <TextView
+            android:id="@+id/bordsplaceringText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/bordsplacering"
+            app:layout_constraintBottom_toTopOf="@+id/bordsplaceringButton"
+            app:layout_constraintEnd_toEndOf="@+id/bordsplaceringButton"
+            app:layout_constraintStart_toStartOf="@+id/bordsplaceringButton" />
+
+        <ImageButton
+            android:id="@+id/bordsplaceringButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/platsButton"
+            app:layout_constraintTop_toBottomOf="@id/önskelistaButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="Bordsplacering" />
+
+        <TextView
+            android:id="@+id/klädkodText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/klädkod"
+            app:layout_constraintBottom_toTopOf="@+id/klädkodButton"
+            app:layout_constraintEnd_toEndOf="@+id/klädkodButton"
+            app:layout_constraintStart_toStartOf="@+id/klädkodButton" />
+
+        <ImageButton
+            android:id="@+id/klädkodButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toRightOf="@id/boendeButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/körschemaButton"
+            tools:text="klädkod" />
+
+        <TextView
+            android:id="@+id/körschemaText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/körschema"
+            app:layout_constraintBottom_toTopOf="@+id/körschemaButton"
+            app:layout_constraintEnd_toEndOf="@+id/körschemaButton"
+            app:layout_constraintStart_toStartOf="@+id/körschemaButton" />
+
+        <ImageButton
+            android:id="@+id/körschemaButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toRightOf="@+id/önskelistaButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/klädkodButton"
+            app:layout_constraintBottom_toTopOf="@id/platsButton"
+            tools:text="körschema" />
+
+        <TextView
+            android:id="@+id/platsText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/brawler"
+            android:text="@string/plats"
+            app:layout_constraintBottom_toTopOf="@+id/platsButton"
+            app:layout_constraintEnd_toEndOf="@+id/platsButton"
+            app:layout_constraintStart_toStartOf="@+id/platsButton" />
+
+        <ImageButton
+            android:id="@+id/platsButton"
+            android:background="@drawable/rounded_icons"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            app:layout_constraintLeft_toRightOf="@id/bordsplaceringButton"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/körschemaButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="plats" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</LinearLayout>

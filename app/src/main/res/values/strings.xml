@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Wedding App</string>
+    <string name="boende">Boende</string>
+    <string name="plats">Plats</string>
+    <string name="körschema">Körschema</string>
+    <string name="önskelista">Önskelista</string>
+    <string name="klädkod">Klädkod</string>
+    <string name="bordsplacering">Bordsplacering</string>
 </resources>
