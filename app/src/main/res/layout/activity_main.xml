@@ -44,8 +44,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/kladkodButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/onskelistaButton"
-            tools:text="Boende" />
+            app:layout_constraintBottom_toTopOf="@id/onskelistaButton" />
 
         <TextView
             android:id="@+id/onskelistaText"

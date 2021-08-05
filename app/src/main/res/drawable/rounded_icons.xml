@@ -12,4 +12,7 @@
         android:width="2dp"
         android:color="@color/black"/>
 
+    <solid
+        android:color="@color/banner_white"/>
+
 </shape>
