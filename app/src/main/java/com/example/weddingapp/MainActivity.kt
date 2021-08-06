@@ -26,7 +26,6 @@ class MainActivity : AppCompatActivity() {
         buttonEffect(binding.platsButton)
         buttonEffect(binding.questionsButton)
 
-
         binding.boendeButton.setOnClickListener {
             val singUpIntent = Intent(this, BoendeScreen::class.java)
             startActivity(singUpIntent)

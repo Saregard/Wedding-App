@@ -27,7 +27,6 @@
             android:id="@+id/boendeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
             android:text="@string/boende"
             android:textAllCaps="true"
             android:textStyle="bold"
@@ -180,8 +179,8 @@
 
         <ImageButton
             android:id="@+id/questionsButton"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginBottom="6dp"
             android:background="@drawable/rounded_icons"
             android:padding="8dp"

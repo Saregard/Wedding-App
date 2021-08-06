@@ -11,6 +11,6 @@ class KyrkaScreen : AppCompatActivity() {
 
     override fun finish() {
         super.finish()
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
+        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
     }
 }

@@ -2,17 +2,20 @@ package com.example.weddingapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.ImageButton
-import com.example.weddingapp.databinding.ActivityMainBinding
+import androidx.annotation.RequiresApi
 import com.example.weddingapp.databinding.ActivityPlatsScreenBinding
 
 class PlatsScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityPlatsScreenBinding
 
+    @SuppressLint("ClickableViewAccessibility")
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plats_screen)
@@ -23,16 +26,16 @@ class PlatsScreen : AppCompatActivity() {
         buttonEffect(binding.kyrkaButton)
         buttonEffect(binding.lokalButton)
 
-        binding.kyrkaButton.setOnClickListener {
-            val singUpIntent = Intent(this, KyrkaScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
         binding.lokalButton.setOnClickListener {
             val singUpIntent = Intent(this, LokalScreen::class.java)
             startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
+        }
+
+        binding.kyrkaButton.setOnClickListener {
+            val singUpIntent = Intent(this, KyrkaScreen::class.java)
+            startActivity(singUpIntent)
+            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up)
         }
     }
 
