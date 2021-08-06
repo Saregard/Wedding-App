@@ -1,12 +1,21 @@
 package com.example.weddingapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.weddingapp.databinding.ActivityBordsplaceringScreenBinding
+import com.example.weddingapp.databinding.ActivityMainBinding
 
 class BordsplaceringScreen : AppCompatActivity() {
+
+    private lateinit var binding: ActivityBordsplaceringScreenBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bordsplacering_screen)
+
+        binding = ActivityBordsplaceringScreenBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
     }
 
     override fun finish() {

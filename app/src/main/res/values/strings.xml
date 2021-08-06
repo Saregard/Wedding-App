@@ -6,4 +6,5 @@
     <string name="önskelista">Önskelista</string>
     <string name="klädkod">Klädkod</string>
     <string name="bordsplacering">Bordsplacering</string>
+    <string name="bordsplacering_underlined">Bordsplacering</string>
 </resources>
