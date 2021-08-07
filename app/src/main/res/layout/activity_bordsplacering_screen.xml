@@ -43,22 +43,44 @@
         android:id="@+id/mainBord"
         android:layout_width="170dp"
         android:layout_height="50dp"
-        android:background="@drawable/bord_layout" />
+        android:background="@drawable/table_layout" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <include
-            android:id="@+id/stolar1"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord1"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
 
         <include
-            android:id="@+id/stolar2"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/right_chairs" />
+
+        <include
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord2"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
+
+        <include
+            layout="@layout/right_chairs" />
 
     </LinearLayout>
 
@@ -67,15 +89,37 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <include
-            android:id="@+id/table3"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord3"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
 
         <include
-            android:id="@+id/table4"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/right_chairs" />
+
+        <include
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord4"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
+
+        <include
+            layout="@layout/right_chairs" />
 
     </LinearLayout>
 
@@ -84,15 +128,37 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <include
-            android:id="@+id/table5"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord5"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
 
         <include
-            android:id="@+id/table6"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/right_chairs" />
+
+        <include
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord6"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
+
+        <include
+            layout="@layout/right_chairs" />
 
     </LinearLayout>
 
@@ -101,15 +167,37 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <include
-            android:id="@+id/table7"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord7"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
 
         <include
-            android:id="@+id/table8"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/right_chairs" />
+
+        <include
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord8"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
+
+        <include
+            layout="@layout/right_chairs" />
 
     </LinearLayout>
 
@@ -118,15 +206,37 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
-        android:gravity="center_horizontal">
+        android:gravity="center">
 
         <include
-            android:id="@+id/table9"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord9"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
 
         <include
-            android:id="@+id/table10"
-            layout="@layout/table_and_chairs" />
+            layout="@layout/right_chairs" />
+
+        <include
+            layout="@layout/left_chairs" />
+
+        <ImageButton
+            android:id="@+id/bord10"
+            android:layout_width="70dp"
+            android:layout_height="90dp"
+            android:background="@drawable/table_layout"
+            android:src="@drawable/cocktail"
+            android:scaleType="centerInside"
+            android:padding="20dp"/>
+
+        <include
+            layout="@layout/right_chairs" />
 
     </LinearLayout>
 
