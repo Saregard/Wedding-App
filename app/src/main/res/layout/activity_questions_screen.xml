@@ -71,7 +71,7 @@
                 android:layout_marginRight="5dp" />
 
             <TextView
-                android:id="@+id/ninnaEmai"
+                android:id="@+id/ninnaEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="asd@asd.com"/>
@@ -131,7 +131,7 @@
             android:layout_marginBottom="20dp">
 
             <ImageButton
-                android:id="@+id/johanEmainIcon"
+                android:id="@+id/johanEmailIcon"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_icons"

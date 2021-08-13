@@ -7,4 +7,6 @@
     <string name="klädkod">Klädkod</string>
     <string name="bordsplacering">Bordsplacering</string>
     <string name="bordsplacering_underlined">Bordsplacering</string>
+    <string name="nummer_kopierat">Nummer kopierat</string>
+    <string name="email_kopierad">Email kopierad</string>
 </resources>
