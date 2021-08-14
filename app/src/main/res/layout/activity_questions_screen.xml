@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_green"
-    android:gravity="center_horizontal"
-    android:orientation="horizontal"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".QuestionsScreen">
+
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/ninnaBild"
@@ -23,7 +22,28 @@
             android:layout_height="140dp"
             android:src="@drawable/ninna_bild"
             app:civ_border_color="@color/black"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="2dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="-56dp"
+            android:layout_marginLeft="6dp"
+            android:elevation="1dp"
+            android:src="@drawable/banner"
+            android:rotation="-5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/evelina"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:layout_marginTop="-64dp"
+            android:layout_marginLeft="6dp"
+            android:elevation="2dp"
+            android:rotation="-11"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -35,20 +55,24 @@
 
             <ImageButton
                 android:id="@+id/ninnaPhoneIcon"
-                android:layout_width="40dp"
+                android:layout_width="160dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_icons"
                 android:padding="10dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitStart"
                 android:src="@drawable/phone_icon"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:id="@+id/ninnaPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="123123123123" />
+                android:text="+46 70-272 10 15"
+                android:layout_marginStart="-135dp"
+                android:layout_marginLeft="-135dp" />
 
         </LinearLayout>
 
@@ -61,20 +85,24 @@
 
             <ImageButton
                 android:id="@+id/ninnaEmailIcon"
-                android:layout_width="40dp"
+                android:layout_width="254dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_icons"
                 android:padding="10dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitStart"
                 android:src="@drawable/email_icon"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"/>
 
             <TextView
                 android:id="@+id/ninnaEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="asd@asd.com"/>
+                android:text="@string/evelina_saregard_outlook_com"
+                android:layout_marginLeft="-225dp"
+                android:layout_marginStart="-225dp" />
 
         </LinearLayout>
 
@@ -83,10 +111,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/johanBild"
@@ -94,7 +120,28 @@
             android:layout_height="140dp"
             android:src="@drawable/johan_bild"
             app:civ_border_color="@color/black"
-            app:civ_border_width="2dp" />
+            app:civ_border_width="2dp"
+            android:layout_gravity="center"/>
+
+        <ImageView
+            android:layout_width="145dp"
+            android:layout_height="98dp"
+            android:layout_marginTop="-56dp"
+            android:layout_marginLeft="6dp"
+            android:elevation="1dp"
+            android:src="@drawable/banner"
+            android:rotation="-5"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/johan"
+            android:textAllCaps="true"
+            android:textSize="20sp"
+            android:layout_marginTop="-64dp"
+            android:layout_marginLeft="6dp"
+            android:elevation="2dp"
+            android:rotation="-11"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -106,20 +153,24 @@
 
             <ImageButton
                 android:id="@+id/johanPhoneIcon"
-                android:layout_width="40dp"
+                android:layout_width="160dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_icons"
                 android:padding="10dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitStart"
                 android:src="@drawable/phone_icon"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:id="@+id/johanPhoneNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="123123123123"/>
+                android:layout_marginStart="-135dp"
+                android:layout_marginLeft="-135dp"
+                android:text="+46 70-229 86 14"/>
 
         </LinearLayout>
 
@@ -127,25 +178,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="20dp">
+            android:gravity="center_vertical">
 
             <ImageButton
                 android:id="@+id/johanEmailIcon"
-                android:layout_width="40dp"
+                android:layout_width="254dp"
                 android:layout_height="40dp"
                 android:background="@drawable/rounded_icons"
                 android:padding="10dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitStart"
                 android:src="@drawable/email_icon"
-                android:layout_marginEnd="5dp"
-                android:layout_marginRight="5dp" />
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="5dp"/>
 
             <TextView
                 android:id="@+id/johanEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="asd@asd.com"/>
+                android:text="@string/johan_gabrielsson_outlook_com"
+                android:layout_marginLeft="-225dp"
+                android:layout_marginStart="-225dp"/>
 
         </LinearLayout>
 

@@ -2,10 +2,10 @@ package com.example.weddingapp
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.ImageButton
+import androidx.appcompat.app.AppCompatActivity
 import com.example.weddingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(singUpIntent)
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
-
     }
 
     @SuppressLint("ClickableViewAccessibility", "ResourceAsColor")

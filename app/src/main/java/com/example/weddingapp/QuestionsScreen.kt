@@ -26,7 +26,6 @@ class QuestionsScreen : AppCompatActivity() {
         buttonEffect(binding.ninnaEmailIcon)
         buttonEffect(binding.johanPhoneIcon)
         buttonEffect(binding.johanEmailIcon)
-
     }
 
     override fun finish() {

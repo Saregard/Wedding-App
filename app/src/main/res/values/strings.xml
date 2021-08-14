@@ -9,4 +9,8 @@
     <string name="bordsplacering_underlined">Bordsplacering</string>
     <string name="nummer_kopierat">Nummer kopierat</string>
     <string name="email_kopierad">Email kopierad</string>
+    <string name="johan">Johan</string>
+    <string name="evelina">Evelina</string>
+    <string name="johan_gabrielsson_outlook_com">johan.gabrielsson@outlook.com</string>
+    <string name="evelina_saregard_outlook_com">evelina.saregard@outlook.com</string>
 </resources>
