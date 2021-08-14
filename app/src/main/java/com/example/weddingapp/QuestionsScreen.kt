@@ -4,17 +4,21 @@ import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.graphics.PorterDuff
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
 import android.widget.ImageButton
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.example.weddingapp.databinding.ActivityQuestionsScreenBinding
 
 class QuestionsScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuestionsScreenBinding
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,11 +58,13 @@ class QuestionsScreen : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     @SuppressLint("ClickableViewAccessibility", "ResourceAsColor")
     fun buttonEffect(button: ImageButton) {
         button.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
+                    v.background.setColorFilter(R.color.background_green, PorterDuff.Mode.DST_ATOP)
                     v.animate().scaleY(1.1f).duration = 50
                     v.animate().scaleX(1.1f).duration = 50
                     v.invalidate()
@@ -73,4 +79,7 @@ class QuestionsScreen : AppCompatActivity() {
             false
         }
     }
+
+
+
 }
