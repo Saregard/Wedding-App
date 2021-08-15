@@ -10,15 +10,12 @@
     android:orientation="vertical"
     android:layout_gravity="center">
 
-
     <ImageButton
+        android:foreground="@drawable/circle_ripple"
         android:id="@+id/lokalButton"
         android:layout_width="240dp"
         android:layout_height="240dp"
-        android:background="@drawable/rounded_icons"
-        android:padding="60dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/maps"
+        android:background="@drawable/maps_icon"
         app:layout_constraintBottom_toTopOf="@+id/kyrkaButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,19 +23,16 @@
         tools:text="plats" />
 
     <ImageButton
+        android:foreground="@drawable/circle_ripple"
         android:id="@+id/kyrkaButton"
         android:layout_width="240dp"
         android:layout_height="240dp"
-        android:background="@drawable/rounded_icons"
-        android:padding="60dp"
-        android:scaleType="centerInside"
-        android:src="@drawable/maps"
+        android:background="@drawable/maps_icon"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lokalButton"
         tools:text="plats" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

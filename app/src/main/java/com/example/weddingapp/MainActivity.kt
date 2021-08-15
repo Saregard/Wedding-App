@@ -74,8 +74,8 @@ class MainActivity : AppCompatActivity() {
         button.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    v.animate().scaleY(1.1f).duration = 50
-                    v.animate().scaleX(1.1f).duration = 50
+                    v.animate().scaleY(1.05f).duration = 80
+                    v.animate().scaleX(1.05f).duration = 80
                     v.invalidate()
                 }
                 MotionEvent.ACTION_UP -> {

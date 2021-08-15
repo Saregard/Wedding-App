@@ -30,6 +30,10 @@ class QuestionsScreen : AppCompatActivity() {
         buttonEffect(binding.ninnaEmailIcon)
         buttonEffect(binding.johanPhoneIcon)
         buttonEffect(binding.johanEmailIcon)
+        buttonEffect(binding.toastmaster1PhoneIcon)
+        buttonEffect(binding.toastmaster1EmailIcon)
+        buttonEffect(binding.toastmaster2PhoneIcon)
+        buttonEffect(binding.toastmaster2EmailIcon)
     }
 
     override fun finish() {
@@ -56,6 +60,22 @@ class QuestionsScreen : AppCompatActivity() {
             clipboardManager.setPrimaryClip(ClipData.newPlainText("text", binding.johanEmail.text))
             Toast.makeText(this, R.string.email_kopierad, Toast.LENGTH_LONG).show()
         }
+        binding.toastmaster1PhoneIcon.setOnClickListener {
+            clipboardManager.setPrimaryClip(ClipData.newPlainText("text", binding.toastmaster1PhoneNumber.text))
+            Toast.makeText(this, R.string.nummer_kopierat, Toast.LENGTH_LONG).show()
+        }
+        binding.toastmaster1EmailIcon.setOnClickListener {
+            clipboardManager.setPrimaryClip(ClipData.newPlainText("text", binding.toastmaster1Email.text))
+            Toast.makeText(this, R.string.nummer_kopierat, Toast.LENGTH_LONG).show()
+        }
+        binding.toastmaster2PhoneIcon.setOnClickListener {
+            clipboardManager.setPrimaryClip(ClipData.newPlainText("text", binding.toastmaster2PhoneNumber.text))
+            Toast.makeText(this, R.string.nummer_kopierat, Toast.LENGTH_LONG).show()
+        }
+        binding.toastmaster2EmailIcon.setOnClickListener {
+            clipboardManager.setPrimaryClip(ClipData.newPlainText("text", binding.toastmaster2Email.text))
+            Toast.makeText(this, R.string.nummer_kopierat, Toast.LENGTH_LONG).show()
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
@@ -64,7 +84,6 @@ class QuestionsScreen : AppCompatActivity() {
         button.setOnTouchListener { v, event ->
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
-                    v.background.setColorFilter(R.color.background_green, PorterDuff.Mode.DST_ATOP)
                     v.animate().scaleY(1.1f).duration = 50
                     v.animate().scaleX(1.1f).duration = 50
                     v.invalidate()
@@ -79,7 +98,4 @@ class QuestionsScreen : AppCompatActivity() {
             false
         }
     }
-
-
-
 }
