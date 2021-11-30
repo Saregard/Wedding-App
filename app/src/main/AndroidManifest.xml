@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WeddingApp">
-        <activity android:name=".KyrkaScreen"></activity>
+        <activity
+            android:name=".DataInput"
+            android:exported="false" />
+        <activity android:name=".KyrkaScreen" />
         <activity android:name=".LokalScreen" />
         <activity android:name=".QuestionsScreen" />
         <activity android:name=".BordsplaceringScreen" />

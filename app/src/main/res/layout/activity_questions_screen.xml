@@ -12,7 +12,7 @@
     tools:context=".QuestionsScreen">
 
     <LinearLayout
-        android:background="@drawable/rounded_icons"
+        android:background="@color/background_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
@@ -86,8 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="-137dp"
-                    android:layout_marginLeft="-135dp"
-                    android:text="+46 70-272 10 15" />
+                    android:text="123 123 123 123" />
 
             </LinearLayout>
 
@@ -100,7 +99,7 @@
                 <ImageButton
                     android:foreground="@drawable/rectangle_ripple"
                     android:id="@+id/ninnaEmailIcon"
-                    android:layout_width="254dp"
+                    android:layout_width="234dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
@@ -115,10 +114,10 @@
                     android:id="@+id/ninnaEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="-230dp"
-                    android:layout_marginLeft="-230dp"
+                    android:layout_marginStart="-205dp"
+                    android:layout_marginLeft="-205dp"
                     android:textSize="13sp"
-                    android:text="@string/evelina_saregard_outlook_com" />
+                    android:text="@string/namn_efternamn_email_com" />
 
             </LinearLayout>
 
@@ -129,7 +128,7 @@
 
     <LinearLayout
         android:layout_marginBottom="20dp"
-        android:background="@drawable/rounded_icons"
+        android:background="@color/background_green"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="end"
@@ -168,8 +167,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="-137dp"
-                    android:layout_marginLeft="-135dp"
-                    android:text="+46 70-272 10 15" />
+                    android:text="123 123 123 123" />
 
             </LinearLayout>
 
@@ -182,7 +180,7 @@
                 <ImageButton
                     android:foreground="@drawable/rectangle_ripple"
                     android:id="@+id/johanEmailIcon"
-                    android:layout_width="254dp"
+                    android:layout_width="234dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="5dp"
@@ -197,10 +195,9 @@
                     android:id="@+id/johanEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="-230dp"
-                    android:layout_marginLeft="-230dp"
+                    android:layout_marginStart="-205dp"
                     android:textSize="13sp"
-                    android:text="@string/johan_gabrielsson_outlook_com" />
+                    android:text="@string/namn_efternamn_email_com" />
 
             </LinearLayout>
 
@@ -211,6 +208,7 @@
             android:layout_marginBottom="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity=""
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -245,8 +243,8 @@
     </LinearLayout>
 
     <LinearLayout
-        android:background="@drawable/rounded_icons"
-        android:layout_width="wrap_content"
+        android:background="@color/background_green"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -281,22 +279,21 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="start"
                 android:orientation="vertical">
 
                 <LinearLayout
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal">
 
                     <ImageButton
@@ -333,7 +330,7 @@
                     <ImageButton
                         android:foreground="@drawable/rectangle_ripple"
                         android:id="@+id/toastmaster1EmailIcon"
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="40dp"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
@@ -348,8 +345,8 @@
                         android:id="@+id/toastmaster1Email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="-180dp"
-                        android:text="@string/namn_efternamn_outlook_com"
+                        android:layout_marginStart="-164dp"
+                        android:text="@string/namn_efternamn_email_com"
                         android:textSize="10sp" />
 
                 </LinearLayout>
@@ -358,15 +355,16 @@
 
             <LinearLayout
                 android:layout_marginStart="-40dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="right"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
                     android:orientation="horizontal"
                     >
 
@@ -402,11 +400,11 @@
                     <ImageButton
                         android:foreground="@drawable/rectangle_ripple"
                         android:id="@+id/toastmaster2EmailIcon"
-                        android:layout_width="200dp"
+                        android:layout_width="190dp"
                         android:layout_height="40dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginRight="10dp"
                         android:layout_marginBottom="5dp"
                         android:background="@drawable/rounded_icons"
                         android:padding="10dp"
@@ -417,8 +415,8 @@
                         android:id="@+id/toastmaster2Email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="-180dp"
-                        android:text="@string/namn_efternamn_outlook_com"
+                        android:layout_marginStart="-164dp"
+                        android:text="@string/namn_efternamn_email_com"
                         android:textSize="10sp" />
 
                 </LinearLayout>

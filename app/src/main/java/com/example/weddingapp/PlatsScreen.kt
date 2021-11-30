@@ -1,6 +1,7 @@
 package com.example.weddingapp
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -23,44 +24,21 @@ class PlatsScreen : AppCompatActivity() {
         binding = ActivityPlatsScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        buttonEffect(binding.kyrkaButton)
-        buttonEffect(binding.lokalButton)
+        val buttonMap: Map<Class<*>, ImageButton> = mapOf(
+            Pair(LokalScreen::class.java, binding.lokalButton),
+            Pair(KyrkaScreen::class.java, binding.kyrkaButton),
+        )
 
-        binding.lokalButton.setOnClickListener {
-            val singUpIntent = Intent(this, LokalScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
-        }
-
-        binding.kyrkaButton.setOnClickListener {
-            val singUpIntent = Intent(this, KyrkaScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_down, R.anim.slide_out_up)
+        for (button in buttonMap) {
+            val anim1 = R.anim.slide_in_right
+            val anim2 = R.anim.slide_out_left
+            ButtonEffect.effect(button.value)
+            Slider.slider(button.value, this, this, button.key, anim1, anim2)
         }
     }
 
     override fun finish() {
         super.finish()
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right)
-    }
-
-    @SuppressLint("ClickableViewAccessibility", "ResourceAsColor")
-    fun buttonEffect(button: ImageButton) {
-        button.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    v.animate().scaleY(1.1f).duration = 50
-                    v.animate().scaleX(1.1f).duration = 50
-                    v.invalidate()
-                }
-                MotionEvent.ACTION_UP -> {
-                    v.animate().scaleY(1.0f).duration = 50
-                    v.animate().scaleX(1.0f).duration = 50
-                    v.background.clearColorFilter()
-                    v.invalidate()
-                }
-            }
-            false
-        }
     }
 }

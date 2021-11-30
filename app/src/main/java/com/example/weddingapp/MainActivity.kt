@@ -1,9 +1,6 @@
 package com.example.weddingapp
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
-import android.view.MotionEvent
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.weddingapp.databinding.ActivityMainBinding
@@ -18,74 +15,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        buttonEffect(binding.boendeButton)
-        buttonEffect(binding.bordsplaceringButton)
-        buttonEffect(binding.kladkodButton)
-        buttonEffect(binding.korschemaButton)
-        buttonEffect(binding.onskelistaButton)
-        buttonEffect(binding.platsButton)
-        buttonEffect(binding.questionsButton)
+        val buttonMap: Map<Class<*>, ImageButton> = mapOf(
+            Pair(DataInput::class.java, binding.boendeButton),
+            Pair(BordsplaceringScreen::class.java, binding.bordsplaceringButton),
+            Pair(KladkodScreen::class.java, binding.kladkodButton),
+            Pair(KorschemaScreen::class.java, binding.korschemaButton),
+            Pair(OnskelistaScreen::class.java, binding.onskelistaButton),
+            Pair(PlatsScreen::class.java, binding.platsButton),
+            Pair(QuestionsScreen::class.java, binding.questionsButton)
+        )
 
-        binding.boendeButton.setOnClickListener {
-            val singUpIntent = Intent(this, BoendeScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.bordsplaceringButton.setOnClickListener {
-            val singUpIntent = Intent(this, BordsplaceringScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.kladkodButton.setOnClickListener {
-            val singUpIntent = Intent(this, KladkodScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.korschemaButton.setOnClickListener {
-            val singUpIntent = Intent(this, KorschemaScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.onskelistaButton.setOnClickListener {
-            val singUpIntent = Intent(this, OnskelistaScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.platsButton.setOnClickListener {
-            val singUpIntent = Intent(this, PlatsScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        binding.questionsButton.setOnClickListener {
-            val singUpIntent = Intent(this, QuestionsScreen::class.java)
-            startActivity(singUpIntent)
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-    }
-
-    @SuppressLint("ClickableViewAccessibility", "ResourceAsColor")
-    fun buttonEffect(button: ImageButton) {
-        button.setOnTouchListener { v, event ->
-            when (event.action) {
-                MotionEvent.ACTION_DOWN -> {
-                    v.animate().scaleY(1.05f).duration = 80
-                    v.animate().scaleX(1.05f).duration = 80
-                    v.invalidate()
-                }
-                MotionEvent.ACTION_UP -> {
-                    v.animate().scaleY(1.0f).duration = 50
-                    v.animate().scaleX(1.0f).duration = 50
-                    v.background.clearColorFilter()
-                    v.invalidate()
-                }
-            }
-            false
+        for (button in buttonMap) {
+            val anim1 = R.anim.slide_in_right
+            val anim2 = R.anim.slide_out_left
+            ButtonEffect.effect(button.value)
+            Slider.slider(button.value, this, this, button.key, anim1, anim2)
         }
     }
 }
