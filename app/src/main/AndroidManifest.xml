@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.weddingapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +19,7 @@
         <activity android:name=".QuestionsScreen" />
         <activity android:name=".BordsplaceringScreen" />
         <activity android:name=".KladkodScreen" />
-        <activity android:name=".OnskelistaScreen" />
+        <activity android:name=".WishlistScreen" />
         <activity android:name=".KorschemaScreen" />
         <activity android:name=".PlatsScreen" />
         <activity android:name=".BoendeScreen" />

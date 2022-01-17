@@ -3,15 +3,31 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/circle_ripple.xml" value="0.590625" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/edit_text_cursor.xml" value="0.590625" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/ring.xml" value="0.590625" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/rounded_icons.xml" value="0.590625" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/rounded_imageview.xml" value="0.3609375" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/drawable/tooltip_background.xml" value="0.590625" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/font-v26/brawler_regular.xml" value="0.6046875" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/font/bold_brawler.xml" value="0.6046875" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/font/brawler.xml" value="0.6046875" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/font/brawler_bold.xml" value="0.6046875" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/font/brawler_regular.xml" value="0.6046875" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_bordsplacering_screen.xml" value="0.4841485507246377" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_data_input.xml" value="0.495018115942029" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_kladkod_screen.xml" value="0.48278985507246375" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_kyrka_screen.xml" value="0.5647644927536232" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_lokal_screen.xml" value="0.5" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_main.xml" value="0.4841485507246377" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_onskelista_screen.xml" value="0.48278985507246375" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_plats_screen.xml" value="0.4841485507246377" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/activity_questions_screen.xml" value="0.4841485507246377" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/add_gift.xml" value="0.34479166666666666" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/custom_tooltip.xml" value="0.447463768115942" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/layout_recycler_view_wishlist.xml" value="0.48278985507246375" />
         <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/left_chairs.xml" value="0.4519927536231884" />
+        <entry key="..\:/Users/oskar/Documents/GitHub/Wedding-App/app/src/main/res/layout/right_chairs.xml" value="0.34479166666666666" />
       </map>
     </option>
   </component>

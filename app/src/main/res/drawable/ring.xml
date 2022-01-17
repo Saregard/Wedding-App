@@ -2,8 +2,7 @@
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:innerRadiusRatio="3"
-    android:shape="oval"
-    android:useLevel="false">
+    android:shape="oval">
 
     <stroke
         android:width="2dp"
@@ -11,5 +10,9 @@
 
     <solid
         android:color="@color/banner_white"/>
+
+    <size
+        android:width="100dp"
+        android:height="100dp"/>
 
 </shape>

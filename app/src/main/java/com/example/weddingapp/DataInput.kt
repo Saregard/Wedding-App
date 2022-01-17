@@ -1,18 +1,15 @@
 package com.example.weddingapp
 
-import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.widget.Toast
 import com.example.weddingapp.databinding.ActivityDataInputBinding
-import com.example.weddingapp.databinding.ActivityMainBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DataInput : AppCompatActivity() {
 
-
-
     private lateinit var binding: ActivityDataInputBinding
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,26 +17,61 @@ class DataInput : AppCompatActivity() {
         binding = ActivityDataInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val db = FirebaseFirestore.getInstance()
+        readData()
 
-        val docRef = db.collection("UserInfo").document("oskar")
-        docRef.get()
-            .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d("exist", "DocumentSnapshot data: ${document.data}")
-                } else {
-                    Log.d("noexist", "No such document")
-                }
-            }
-            .addOnFailureListener { exception ->
-                Log.d("errordb", "get failed with ", exception)
-            }
-
-        binding.fRnamn.hint = "Förnamn"
-        binding.efternamn.hint= "Efternamn"
+        binding.firstName.hint = "Förnamn"
+        binding.lastName.hint = "Efternamn"
         binding.allergi.hint = "Allergi"
 
-        binding.fRnamn.text
+        binding.comingButton.setOnClickListener {
+            if (binding.firstName.editText.toString().isNotEmpty() && binding.lastName.editText?.text.toString().isNotEmpty()) {
+                addData(
+                    binding.firstName.editText?.text.toString(),
+                    binding.lastName.editText?.text.toString(),
+                    binding.allergi.editText?.text.toString()
+                )
+            }
+            if (binding.firstName.editText?.text?.isEmpty() == true) {
+                binding.firstName.error = "Fyll i förnamn"
+            }
+            if (binding.lastName.editText?.text?.isEmpty() == true) {
+                binding.lastName.error = "Fyll i efternamn"
+            }
+        }
+    }
 
+    private fun addData(firstName: String, lastName: String, allergi: String) {
+
+        val user: MutableMap<String, String> = HashMap()
+        user["firstName"] = firstName
+        user["lastName"] = lastName
+        user["allergi"] = allergi
+
+        db.collection("userInfo")
+            .add(user)
+            .addOnSuccessListener {
+                Toast.makeText(this, "This was a success", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener {
+                Toast.makeText(this, "This was a failure", Toast.LENGTH_SHORT).show()
+            }
+    }
+
+    private fun readData() {
+        db.collection("userInfo")
+            .get()
+            .addOnCompleteListener {
+                val result = StringBuffer()
+                if (it.isSuccessful) {
+                    for (document in it.result!!) {
+                        result.append(document.data.getValue("firstName")).append(" ")
+                            .append(document.data.getValue("lastName")).append(" ")
+                            .append(document.data.getValue("allergi")).append("\n\n")
+                    }
+                    binding.comingButton.text = result
+                }
+            }
+            .addOnFailureListener {
+            }
     }
 }
