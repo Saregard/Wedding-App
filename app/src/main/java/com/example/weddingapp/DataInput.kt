@@ -17,8 +17,6 @@ class DataInput : AppCompatActivity() {
         binding = ActivityDataInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        readData()
-
         binding.firstName.hint = "Förnamn"
         binding.lastName.hint = "Efternamn"
         binding.allergi.hint = "Allergi"

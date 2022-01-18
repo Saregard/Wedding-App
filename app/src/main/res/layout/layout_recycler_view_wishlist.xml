@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,7 +9,7 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="10dp"
     app:strokeColor="@color/black"
-    app:strokeWidth="2dp">
+    app:strokeWidth="0.8dp">
 
     <LinearLayout
         android:id="@+id/wishlistCardView"
@@ -18,37 +19,75 @@
         android:orientation="horizontal">
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="194dp"
-            android:layout_height="194dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="100dp"
             app:cardElevation="0dp"
             app:strokeColor="@color/black"
-            app:strokeWidth="2dp">
+            app:strokeWidth="0.8dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/cardViewImageView"
-                android:layout_width="194dp"
-                android:layout_height="194dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:scaleType="centerInside" />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/cardViewTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="sodastream"
-            android:textAllCaps="true"
-            android:textSize="18sp" />
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cardViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                tools:text="sodastream" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cardViewPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                tools:text="1000 sek" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cardViewWebsite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center"
+                android:textAllCaps="true"
+                android:textSize="18sp"
+                tools:text="www.google.com" />
+
+        </LinearLayout>
+
 
     </LinearLayout>
 

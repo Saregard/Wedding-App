@@ -21,23 +21,18 @@ class WishlistRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val gift: Wishlist = listOfGifts[position]
-        holder.title.text = gift.title
+        holder.giftTitle.text = gift.giftTitle
+        holder.giftPrice.text = gift.giftPrice
+        holder.giftWebsite.text = gift.giftWebsite
     }
 
     override fun getItemCount(): Int = listOfGifts.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val title: MaterialTextView = itemView.findViewById(R.id.cardViewTextView)
-
-//        companion object {
-//            fun create(parent: ViewGroup): ViewHolder {
-//                val layoutInflater = LayoutInflater.from(parent.context)
-//                val binding =
-//                    LayoutRecyclerViewWishlistBinding.inflate(layoutInflater, parent, false)
-//                return ViewHolder(binding)
-//            }
-//        }
+        val giftTitle: MaterialTextView = itemView.findViewById(R.id.cardViewTitle)
+        val giftPrice: MaterialTextView = itemView.findViewById(R.id.cardViewPrice)
+        val giftWebsite: MaterialTextView = itemView.findViewById(R.id.cardViewWebsite)
 
     }
 }

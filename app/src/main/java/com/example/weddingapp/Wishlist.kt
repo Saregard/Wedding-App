@@ -1,5 +1,7 @@
 package com.example.weddingapp
 
 data class Wishlist(
-    val title: String = ""
+    val giftTitle: String = "",
+    val giftPrice: String = "",
+    val giftWebsite: String = ""
 )

@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WeddingApp">
         <activity
+            android:name=".AddNewGift"
+            android:label="Add new gift"
+            android:theme="@android:style/Theme.Dialog"/>
+        <activity
             android:name=".DataInput"
             android:exported="false" />
         <activity android:name=".KyrkaScreen" />
