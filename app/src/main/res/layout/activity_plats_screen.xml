@@ -5,40 +5,73 @@
     android:id="@+id/platsScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
     android:background="@color/background_green"
-    tools:context=".PlatsScreen"
     android:orientation="vertical"
-    android:layout_gravity="center">
+    tools:context=".PlatsScreen">
 
-    <TextView
-        android:id="@+id/testText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints" />
+    <ImageView
+        android:id="@+id/lokalText"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lokalButton"
+        app:layout_constraintEnd_toEndOf="@+id/lokalButton"
+        app:layout_constraintStart_toStartOf="@+id/lokalButton"
+        app:layout_constraintTop_toTopOf="@+id/lokalButton" />
 
-    <ImageButton
-        android:foreground="@drawable/circle_ripple"
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/lokalButton"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:background="@drawable/maps_icon"
-        app:layout_constraintBottom_toTopOf="@+id/kyrkaButton"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:cardCornerRadius="250dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toTopOf="@id/kyrkaButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="plats" />
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp">
 
-    <ImageButton
-        android:foreground="@drawable/circle_ripple"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/fest_lokal" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/kyrkaText"
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        app:layout_constraintBottom_toBottomOf="@+id/kyrkaButton"
+        app:layout_constraintEnd_toEndOf="@+id/kyrkaButton"
+        app:layout_constraintStart_toStartOf="@+id/kyrkaButton"
+        app:layout_constraintTop_toTopOf="@+id/kyrkaButton" />
+
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/kyrkaButton"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:background="@drawable/maps_icon"
+        app:cardCornerRadius="250dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lokalButton"
-        tools:text="plats" />
+        app:strokeColor="@color/black"
+        app:strokeWidth="2dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/church_icon" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

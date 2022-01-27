@@ -9,7 +9,7 @@ import kotlin.math.min
 class CurvedTextView {
 
 
-    fun drawTextOnPath(context: Context, width: Int, height: Int, text: String): Bitmap? {
+    fun drawTextOnPath(context: Context, width: Int, height: Int, text: String, curvedTextSize: Float): Bitmap? {
         val bitmap = Bitmap.createBitmap(
             width,
             height,
@@ -25,7 +25,7 @@ class CurvedTextView {
         val textPaint = TextPaint().apply {
             isAntiAlias = true
             color = Color.parseColor("#000000")
-            textSize = 50F
+            textSize = curvedTextSize
             typeface = ResourcesCompat.getFont(context, R.font.brawler)
             textAlign = Paint.Align.CENTER
         }

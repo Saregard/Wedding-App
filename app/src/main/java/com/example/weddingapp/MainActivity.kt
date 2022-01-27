@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             val anim1 = R.anim.slide_in_right
             val anim2 = R.anim.slide_out_left
             ButtonEffect.effect(button.value)
-            Slider.slider(button.value, this, this, button.key, anim1, anim2)
+            Slider.slider1(button.value, this, this, button.key, anim1, anim2)
         }
     }
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
                         this@MainActivity,
                         imageView.width,
                         imageView.height,
-                        text
+                        text, 50f
                     )
                 )
             }

@@ -1,26 +1,31 @@
 package com.example.weddingapp
 
+import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.Slide
 import android.transition.TransitionManager
 import android.util.Log
 import android.view.*
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weddingapp.databinding.ActivityOnskelistaScreenBinding
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.*
-import android.content.Intent
 import android.net.Uri
-import androidx.cardview.widget.CardView
-import com.google.android.material.card.MaterialCardView
+import android.util.AttributeSet
+import androidx.activity.result.ActivityResultCallback
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
+import com.google.firebase.firestore.EventListener
+import com.google.firebase.storage.FirebaseStorage
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
+import kotlin.collections.HashMap
 
 
 class WishlistScreen : AppCompatActivity() {
@@ -43,15 +48,22 @@ class WishlistScreen : AppCompatActivity() {
         myAdapter = WishlistRecyclerViewAdapter(giftArrayList, this)
         recyclerView.adapter = myAdapter
 
-
-        addButton()
         eventChangeListener()
+        openButton()
+    }
 
+    fun openButton() {
+        binding.wishlistAddButton.setOnClickListener {
+            val intent = Intent(this, GiftAddPopupWindow::class.java)
+            startActivity(intent)
+
+        }
     }
 
     private fun eventChangeListener() {
         db.collection("wishlist")
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
+                @SuppressLint("NotifyDataSetChanged")
                 override fun onEvent(
                     value: QuerySnapshot?,
                     error: FirebaseFirestoreException?
@@ -68,69 +80,6 @@ class WishlistScreen : AppCompatActivity() {
                     myAdapter.notifyDataSetChanged()
                 }
             })
-    }
-
-    private fun addButton() {
-        binding.wishlistAddButton.setOnClickListener {
-            val inflater: LayoutInflater =
-                getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            val view = inflater.inflate(R.layout.add_gift, null)
-
-            val popupWindow = PopupWindow(
-                view,
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                true
-            )
-
-            popupWindow.animationStyle = R.style.popup_window_animation
-
-            popupWindow.elevation = 10.0F
-            TransitionManager.beginDelayedTransition(binding.root)
-            popupWindow.showAtLocation(
-                binding.root, Gravity.CENTER, 0, 0
-            )
-
-            val cancelButton = view.findViewById<Button>(R.id.cancelButton)
-            val saveGiftButton = view.findViewById<Button>(R.id.saveGiftButton)
-            val titleEditText = view.findViewById<TextInputLayout>(R.id.giftTitle)
-            val priceEditText = view.findViewById<TextInputLayout>(R.id.giftPrice)
-            val websiteEditText = view.findViewById<TextInputLayout>(R.id.giftWebsite)
-
-
-            saveGiftButton.setOnClickListener {
-                if (titleEditText.editText?.text?.isEmpty() == true) {
-                    titleEditText.error = "Fyll i en titel"
-                } else
-                    addData(
-                        titleEditText.editText?.text.toString(),
-                        priceEditText.editText?.text.toString() + " SEK",
-                        websiteEditText.editText?.text.toString()
-                    )
-                popupWindow.dismiss()
-
-            }
-            cancelButton.setOnClickListener {
-                popupWindow.dismiss()
-            }
-        }
-    }
-
-    private fun addData(giftTitle: String, giftPrice: String, giftWebsite: String) {
-        val gift: MutableMap<String, String> = HashMap()
-
-        gift["giftTitle"] = giftTitle
-        gift["giftPrice"] = giftPrice
-        gift["giftWebsite"] = giftWebsite
-
-        db.collection("wishlist")
-            .add(gift)
-            .addOnSuccessListener {
-                Toast.makeText(this, "This was a success", Toast.LENGTH_SHORT).show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this, "This was a failure", Toast.LENGTH_SHORT).show()
-            }
     }
 
     override fun finish() {
