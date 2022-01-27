@@ -22,6 +22,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
+            android:textAlignment="center"
             android:text="Add new gift information"
             android:textColor="@color/black"
             android:textSize="24sp" />
@@ -125,24 +126,6 @@
                 android:layout_height="100dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/camera_icon" />
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/banner_white"
-            app:cardCornerRadius="100dp"
-            app:cardElevation="0dp"
-            app:strokeColor="@color/black"
-            app:strokeWidth="1dp">
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/firebaseImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerInside" />
 
         </com.google.android.material.card.MaterialCardView>
 

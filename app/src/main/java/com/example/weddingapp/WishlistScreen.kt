@@ -52,7 +52,7 @@ class WishlistScreen : AppCompatActivity() {
         openButton()
     }
 
-    fun openButton() {
+    private fun openButton() {
         binding.wishlistAddButton.setOnClickListener {
             val intent = Intent(this, GiftAddPopupWindow::class.java)
             startActivity(intent)

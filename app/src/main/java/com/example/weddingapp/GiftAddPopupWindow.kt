@@ -37,7 +37,7 @@ class GiftAddPopupWindow : AppCompatActivity() {
 
         selectPicture()
         addButton()
-//        setWindowParams()
+        setWindowParams()
 
     }
 
@@ -63,13 +63,8 @@ class GiftAddPopupWindow : AppCompatActivity() {
 
         }
         binding.cancelButton.setOnClickListener {
-
+            finish()
         }
-    }
-
-    private fun goBack() {
-        val intent = Intent(this, WishlistScreen::class.java)
-        startActivity(intent)
     }
 
     private fun uploadImage() {
@@ -85,13 +80,13 @@ class GiftAddPopupWindow : AppCompatActivity() {
         val storageReference = FirebaseStorage.getInstance().getReference("images/$fileName")
 
         storageReference.putFile(imageUri).addOnSuccessListener {
-            binding.firebaseImage.setImageURI(null)
+            binding.addPicture.setImageURI(null)
             Toast.makeText(this, "Successfully uploaded", Toast.LENGTH_SHORT).show()
         }
             .addOnFailureListener {
                 if (progressDialog.isShowing) {
                     progressDialog.dismiss()
-                    Toast.makeText(this, "Successfully uploaded", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Upload was not successful", Toast.LENGTH_SHORT).show()
                 }
             }
     }
@@ -100,7 +95,7 @@ class GiftAddPopupWindow : AppCompatActivity() {
         val getImage = registerForActivityResult(
             ActivityResultContracts.GetContent(),
             ActivityResultCallback {
-                binding.firebaseImage.setImageURI(it)
+                binding.addPicture.setImageURI(it)
             }
         )
 

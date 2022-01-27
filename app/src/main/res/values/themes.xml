@@ -24,6 +24,7 @@
     <style name="PopupActivity" parent="Theme.MaterialComponents.Dialog">
         <item name="android:windowBackground">@null</item>
         <item name="android:windowNoTitle">false</item>
-        <item name="android:buttonTint">@color/banner_white</item>
+        <item name="colorPrimary">@color/banner_white</item>
+        <item name="fontFamily">@font/brawler</item>
     </style>
 </resources>

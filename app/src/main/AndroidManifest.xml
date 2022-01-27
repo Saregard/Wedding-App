@@ -14,22 +14,36 @@
         android:theme="@style/Theme.WeddingApp">
         <activity
             android:name=".GiftAddPopupWindow"
+            android:screenOrientation="portrait"
+            android:theme="@style/PopupActivity"
             android:exported="false"
             android:excludeFromRecents="true"
             />
         <activity
             android:name=".DataInput"
+            android:screenOrientation="portrait"
             android:exported="false" />
-        <activity android:name=".KyrkaScreen" />
-        <activity android:name=".LokalScreen" />
-        <activity android:name=".QuestionsScreen" />
-        <activity android:name=".BordsplaceringScreen" />
-        <activity android:name=".KladkodScreen" />
-        <activity android:name=".WishlistScreen" />
-        <activity android:name=".KorschemaScreen" />
-        <activity android:name=".PlatsScreen" />
-        <activity android:name=".BoendeScreen" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".KyrkaScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LokalScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".QuestionsScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".BordsplaceringScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".KladkodScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WishlistScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".KorschemaScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".PlatsScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".BoendeScreen"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
