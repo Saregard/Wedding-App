@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/popupBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:cardCornerRadius="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,8 +125,7 @@
                 android:id="@+id/addPicture"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/camera_icon" />
+                />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -163,4 +163,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</androidx.cardview.widget.CardView>

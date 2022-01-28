@@ -1,33 +1,23 @@
 package com.example.weddingapp
 
-import android.app.ProgressDialog
-import android.content.Context
-import android.content.Intent
+import android.content.ContentValues.TAG
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.TransitionManager
-import android.view.Gravity
-import android.view.LayoutInflater
+import android.util.Log
 import android.widget.*
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import com.example.weddingapp.databinding.ActivityGiftAddPopupWindowBinding
-import com.example.weddingapp.databinding.ActivityOnskelistaScreenBinding
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
-import java.text.SimpleDateFormat
+import com.squareup.picasso.Picasso
 import java.util.*
-import android.view.WindowManager
-
 
 class GiftAddPopupWindow : AppCompatActivity() {
 
     private lateinit var binding: ActivityGiftAddPopupWindowBinding
     private val db = FirebaseFirestore.getInstance()
-    lateinit var imageUri: Uri
-
+    private var selectedPhotoUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,15 +27,6 @@ class GiftAddPopupWindow : AppCompatActivity() {
 
         selectPicture()
         addButton()
-        setWindowParams()
-
-    }
-
-    private fun setWindowParams() {
-        val popupWindow = window.attributes
-        popupWindow.flags = WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
-
-        window.attributes = popupWindow
     }
 
     private fun addButton() {
@@ -54,11 +35,16 @@ class GiftAddPopupWindow : AppCompatActivity() {
             if (binding.giftTitle.editText?.text?.isEmpty() == true) {
                 binding.giftTitle.error = "Fyll i en titel"
             } else
-                addData(
-                    binding.giftTitle.editText?.text.toString(),
-                    binding.giftPrice.editText?.text.toString() + " SEK",
-                    binding.giftWebsite.editText?.text.toString()
-                )
+
+                finalDownloadedImage?.let { it1 ->
+                    addData(
+                        binding.giftTitle.editText?.text.toString(),
+                        binding.giftPrice.editText?.text.toString() + " SEK",
+                        binding.giftWebsite.editText?.text.toString(),
+                        it1
+
+                    )
+                }
             uploadImage()
 
         }
@@ -67,49 +53,53 @@ class GiftAddPopupWindow : AppCompatActivity() {
         }
     }
 
+    var finalDownloadedImage : String? = null
+
     private fun uploadImage() {
 
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Uploading File ...")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
+        if (selectedPhotoUri == null) return
 
-        val formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.getDefault())
-        val now = Date()
-        val fileName = formatter.format(now)
-        val storageReference = FirebaseStorage.getInstance().getReference("images/$fileName")
+        val fileName = UUID.randomUUID().toString()
+        val reference = FirebaseStorage.getInstance().getReference("/images/$fileName")
 
-        storageReference.putFile(imageUri).addOnSuccessListener {
-            binding.addPicture.setImageURI(null)
-            Toast.makeText(this, "Successfully uploaded", Toast.LENGTH_SHORT).show()
-        }
-            .addOnFailureListener {
-                if (progressDialog.isShowing) {
-                    progressDialog.dismiss()
-                    Toast.makeText(this, "Upload was not successful", Toast.LENGTH_SHORT).show()
+        reference.putFile(selectedPhotoUri!!)
+            .addOnSuccessListener {
+                Log.d("RegisterASD", "uploadImage: ${it.metadata?.path}")
+
+                reference.downloadUrl.addOnSuccessListener { downloadedImage ->
+                    val di = downloadedImage.toString()
+                    Log.d(TAG, "image url: $downloadedImage")
+                    finalDownloadedImage = di
                 }
             }
     }
 
-    private fun selectPicture() {
-        val getImage = registerForActivityResult(
-            ActivityResultContracts.GetContent(),
-            ActivityResultCallback {
-                binding.addPicture.setImageURI(it)
-            }
-        )
 
+    private fun selectPicture() {
+        val getImage = registerForActivityResult(ActivityResultContracts.GetContent()) {
+            val picture = binding.addPicture
+            picture.scaleType = ImageView.ScaleType.CENTER_CROP
+            selectedPhotoUri = it
+            picture.setImageURI(it)
+
+        }
         binding.addPicture.setOnClickListener {
             getImage.launch("image/*")
         }
     }
 
-    private fun addData(giftTitle: String, giftPrice: String, giftWebsite: String) {
+    private fun addData(
+        giftTitle: String,
+        giftPrice: String,
+        giftWebsite: String,
+        firestoreImageUrl: String
+    ) {
         val gift: MutableMap<String, String> = HashMap()
 
         gift["giftTitle"] = giftTitle
         gift["giftPrice"] = giftPrice
         gift["giftWebsite"] = giftWebsite
+        gift["firestoreImageUrl"] = firestoreImageUrl
 
         db.collection("wishlist")
             .add(gift)
