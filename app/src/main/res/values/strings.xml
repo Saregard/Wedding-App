@@ -6,4 +6,26 @@
     <string name="önskelista">Önskelista</string>
     <string name="klädkod">Klädkod</string>
     <string name="bordsplacering">Bordsplacering</string>
+    <string name="bordsplacering_underlined">Bordsplacering</string>
+    <string name="nummer_kopierat">Nummer kopierat</string>
+    <string name="email_kopierad">Email kopierad</string>
+    <string name="johan">Johan</string>
+    <string name="evelina">Evelina</string>
+    <string name="johan_gabrielsson_outlook_com">johan.gabrielsson@outlook.com</string>
+    <string name="evelina_saregard_outlook_com">evelina.saregard@outlook.com</string>
+    <string name="namn_efternamn_email_com">namn.efternamn@email.com</string>
+    <string name="namn">Namn</string>
+    <string name="efternamn">Efternamn</string>
+    <string name="allergi">Allergi</string>
+    <string name="BOENDE">BOENDE</string>
+    <string name="BORDSPLACERING">BORDSPLACERING</string>
+    <string name="KLÄDKOD">KLÄDKOD</string>
+    <string name="TIDSSHCEMA">TIDSSHCEMA</string>
+    <string name="ÖNSKELISTA">ÖNSKELISTA</string>
+    <string name="PLATS">PLATS</string>
+    <string name="annersagard_description">Detta är platsen och bröllopslokalen för dig som vill ha en oförglömlig bröllopsfest och ett romantiskt bröllop i lantlig miljö, med direkt närhet till skog och vackra omgivningar.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_gift">Add gift</string>
 </resources>

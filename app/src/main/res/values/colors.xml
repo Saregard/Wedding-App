@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_green">#B2C9B9</color>
+    <color name="darker_background_green">#829889</color>
+    <color name="lighter_background_green">#e4fceb</color>
+    <color name="banner_white">#FDFCF8</color>
+    <color name="overlay">#80000000</color>
+    <color name="greyText">#80000000</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="deleteColor">#DC0000</color>
+
 </resources>

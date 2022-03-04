@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/questionScreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_green"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="3dp"
+    tools:context=".QuestionsScreen">
+
+    <LinearLayout
+        android:background="@color/background_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ninnaBild"
+                android:layout_width="128dp"
+                android:layout_height="120dp"
+                android:src="@drawable/ninna_bild"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="2dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="-34dp"
+                android:elevation="1dp"
+                android:rotation="-5"
+                android:src="@drawable/banner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="-38dp"
+                android:elevation="2dp"
+                android:rotation="-11"
+                android:text="@string/evelina"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:foreground="@drawable/rectangle_ripple"
+                    android:id="@+id/ninnaPhoneIcon"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_icons"
+                    android:padding="6dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/mobile_phone" />
+
+                <TextView
+                    android:id="@+id/ninnaPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-137dp"
+                    android:text="123 123 123 123" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:foreground="@drawable/rectangle_ripple"
+                    android:id="@+id/ninnaEmailIcon"
+                    android:layout_width="234dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_icons"
+                    android:padding="10dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/email_icon" />
+
+                <TextView
+                    android:id="@+id/ninnaEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-205dp"
+                    android:layout_marginLeft="-205dp"
+                    android:textSize="13sp"
+                    android:text="@string/namn_efternamn_email_com" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginBottom="20dp"
+        android:background="@color/background_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:foreground="@drawable/rectangle_ripple"
+                    android:id="@+id/johanPhoneIcon"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_icons"
+                    android:padding="6dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/mobile_phone" />
+
+                <TextView
+                    android:id="@+id/johanPhoneNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-137dp"
+                    android:text="123 123 123 123" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:foreground="@drawable/rectangle_ripple"
+                    android:id="@+id/johanEmailIcon"
+                    android:layout_width="234dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/rounded_icons"
+                    android:padding="10dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/email_icon" />
+
+                <TextView
+                    android:id="@+id/johanEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-205dp"
+                    android:textSize="13sp"
+                    android:text="@string/namn_efternamn_email_com" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity=""
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/johanBild"
+                android:layout_width="128dp"
+                android:layout_height="120dp"
+                android:src="@drawable/johan_bild"
+                app:civ_border_color="@color/black"
+                app:civ_border_width="2dp" />
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="-34dp"
+                android:elevation="1dp"
+                android:rotation="-5"
+                android:src="@drawable/banner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="34dp"
+                android:layout_marginTop="-38dp"
+                android:elevation="2dp"
+                android:rotation="-11"
+                android:text="@string/johan"
+                android:textAllCaps="true"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:background="@color/background_green"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:src="@drawable/champagne_glasses"/>
+
+            <ImageView
+                android:layout_marginTop="-60dp"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:src="@drawable/banner" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toastmasters"
+                android:textSize="16sp"
+                android:rotation="-6"
+                android:textAllCaps="true"
+                android:layout_marginTop="-62dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:foreground="@drawable/rectangle_ripple"
+                        android:id="@+id/toastmaster1PhoneIcon"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/rounded_icons"
+                        android:padding="10dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/mobile_phone" />
+
+                    <TextView
+                        android:id="@+id/toastmaster1PhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-130dp"
+                        android:layout_marginLeft="-235dp"
+                        android:text="123 123 123 123" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageButton
+                        android:foreground="@drawable/rectangle_ripple"
+                        android:id="@+id/toastmaster1EmailIcon"
+                        android:layout_width="190dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/rounded_icons"
+                        android:padding="10dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/email_icon" />
+
+                    <TextView
+                        android:id="@+id/toastmaster1Email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-164dp"
+                        android:text="@string/namn_efternamn_email_com"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginStart="-40dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <ImageButton
+                        android:foreground="@drawable/rectangle_ripple"
+                        android:id="@+id/toastmaster2PhoneIcon"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/rounded_icons"
+                        android:padding="10dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/mobile_phone" />
+
+                    <TextView
+                        android:id="@+id/toastmaster2PhoneNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-130dp"
+                        android:text="123 123 123 123" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:foreground="@drawable/rectangle_ripple"
+                        android:id="@+id/toastmaster2EmailIcon"
+                        android:layout_width="190dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/rounded_icons"
+                        android:padding="10dp"
+                        android:scaleType="fitStart"
+                        android:src="@drawable/email_icon" />
+
+                    <TextView
+                        android:id="@+id/toastmaster2Email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="-164dp"
+                        android:text="@string/namn_efternamn_email_com"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

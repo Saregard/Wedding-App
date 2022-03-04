@@ -4,177 +4,252 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/background_green"
     android:orientation="vertical"
-    android:background="@color/background_green">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/image"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:src="@drawable/wedding_picture"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
         android:layout_gravity="center"
-        android:layout_marginTop="-20dp"/>
+        android:layout_marginTop="-70dp"
+        android:layout_marginBottom="-80dp"
+        android:src="@drawable/wedding_picture" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:layout_marginTop="-40dp">
+        android:paddingVertical="0dp">
 
-        <TextView
+        <ImageView
             android:id="@+id/boendeText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/boende"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/boendeButton"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            app:layout_constraintBottom_toBottomOf="@+id/boendeButton"
             app:layout_constraintEnd_toEndOf="@+id/boendeButton"
-            app:layout_constraintStart_toStartOf="@+id/boendeButton" />
+            app:layout_constraintStart_toStartOf="@+id/boendeButton"
+            app:layout_constraintTop_toTopOf="@+id/boendeButton" />
 
-        <ImageButton
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/boendeButton"
-            android:src="@drawable/home"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="24dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toTopOf="@id/wishlistButton"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/kladkodButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/onskelistaButton"
-            tools:text="Boende" />
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
 
-        <TextView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
             android:id="@+id/onskelistaText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/önskelista"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/onskelistaButton"
-            app:layout_constraintEnd_toEndOf="@+id/onskelistaButton"
-            app:layout_constraintStart_toStartOf="@+id/onskelistaButton" />
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:layout_marginBottom="-110dp"
+            app:layout_constraintBottom_toBottomOf="@id/wishlistButton"
+            app:layout_constraintEnd_toEndOf="@+id/wishlistButton"
+            app:layout_constraintStart_toStartOf="@+id/wishlistButton"
+            app:layout_constraintTop_toTopOf="@+id/wishlistButton" />
 
-        <ImageButton
-            android:id="@+id/onskelistaButton"
-            android:src="@drawable/giftbox"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="28dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/korschemaButton"
-            app:layout_constraintTop_toBottomOf="@+id/boendeButton"
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/wishlistButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            android:foreground="@drawable/circle_ripple"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toTopOf="@id/bordsplaceringButton"
-            tools:text="Önskelista" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/tidsschemaButton"
+            app:layout_constraintTop_toBottomOf="@+id/boendeButton"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
 
-        <TextView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="22dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/giftbox" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
             android:id="@+id/bordsplaceringText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/bordsplacering"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/bordsplaceringButton"
+            android:layout_width="139dp"
+            android:layout_height="132dp"
+            android:layout_marginBottom="-110dp"
+            app:layout_constraintBottom_toBottomOf="@id/bordsplaceringButton"
             app:layout_constraintEnd_toEndOf="@+id/bordsplaceringButton"
-            app:layout_constraintStart_toStartOf="@+id/bordsplaceringButton" />
+            app:layout_constraintStart_toStartOf="@+id/bordsplaceringButton"
+            app:layout_constraintTop_toTopOf="@+id/bordsplaceringButton" />
 
-        <ImageButton
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/bordsplaceringButton"
-            android:src="@drawable/chair"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="20dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            android:foreground="@drawable/circle_ripple"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/platsButton"
-            app:layout_constraintTop_toBottomOf="@id/onskelistaButton"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="Bordsplacering" />
+            app:layout_constraintTop_toBottomOf="@id/wishlistButton"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
 
-        <TextView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="18dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/chair" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
             android:id="@+id/kladkodText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/klädkod"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/kladkodButton"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:layout_marginBottom="-110dp"
+            app:layout_constraintBottom_toBottomOf="@id/kladkodButton"
             app:layout_constraintEnd_toEndOf="@+id/kladkodButton"
-            app:layout_constraintStart_toStartOf="@+id/kladkodButton" />
+            app:layout_constraintStart_toStartOf="@+id/kladkodButton"
+            app:layout_constraintTop_toTopOf="@+id/kladkodButton" />
 
-        <ImageButton
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/kladkodButton"
-            android:src="@drawable/dress"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="20dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            android:foreground="@drawable/circle_ripple"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toTopOf="@id/tidsschemaButton"
             app:layout_constraintLeft_toRightOf="@id/boendeButton"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/korschemaButton"
-            tools:text="klädkod" />
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
 
-        <TextView
-            android:id="@+id/korschemaText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/körschema"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/korschemaButton"
-            app:layout_constraintEnd_toEndOf="@+id/korschemaButton"
-            app:layout_constraintStart_toStartOf="@+id/korschemaButton" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/dress" />
 
-        <ImageButton
-            android:id="@+id/korschemaButton"
-            android:src="@drawable/car"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="20dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            app:layout_constraintLeft_toRightOf="@+id/onskelistaButton"
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
+            android:id="@+id/tidsschemaText"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:layout_marginBottom="-110dp"
+            app:layout_constraintBottom_toBottomOf="@id/tidsschemaButton"
+            app:layout_constraintEnd_toEndOf="@+id/tidsschemaButton"
+            app:layout_constraintStart_toStartOf="@+id/tidsschemaButton"
+            app:layout_constraintTop_toTopOf="@+id/tidsschemaButton" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/tidsschemaButton"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toTopOf="@id/platsButton"
+            app:layout_constraintLeft_toRightOf="@+id/wishlistButton"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/kladkodButton"
-            app:layout_constraintBottom_toTopOf="@id/platsButton"
-            tools:text="körschema" />
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
 
-        <TextView
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/time" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <ImageView
             android:id="@+id/platsText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/brawler"
-            android:text="@string/plats"
-            android:textAllCaps="true"
-            app:layout_constraintBottom_toTopOf="@+id/platsButton"
+            android:layout_width="132dp"
+            android:layout_height="132dp"
+            android:layout_marginBottom="-110dp"
+            app:layout_constraintBottom_toBottomOf="@id/platsButton"
             app:layout_constraintEnd_toEndOf="@+id/platsButton"
-            app:layout_constraintStart_toStartOf="@+id/platsButton" />
+            app:layout_constraintStart_toStartOf="@+id/platsButton"
+            app:layout_constraintTop_toTopOf="@+id/platsButton" />
 
-        <ImageButton
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/platsButton"
-            android:src="@drawable/maps"
-            android:background="@drawable/rounded_icons"
-            android:scaleType="centerInside"
-            android:padding="26dp"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:backgroundTint="@color/banner_white"
+            android:foreground="@drawable/circle_ripple"
+            app:cardCornerRadius="100dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/bordsplaceringButton"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/korschemaButton"
+            app:layout_constraintTop_toBottomOf="@id/tidsschemaButton"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="22dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/maps" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/questionsButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="4dp"
+            android:backgroundTint="@color/banner_white"
+            android:foreground="@drawable/circle_ripple"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="plats" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1.5dp">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/question_mark" />
+
+        </com.google.android.material.card.MaterialCardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 
 </LinearLayout>
