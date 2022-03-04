@@ -2,11 +2,11 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardView"
+    android:id="@+id/giftCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
+    app:cardCornerRadius="6dp"
     app:cardElevation="10dp"
     app:strokeColor="@color/black"
     app:strokeWidth="0.8dp">
@@ -21,9 +21,9 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             app:cardCornerRadius="100dp"
             app:cardElevation="0dp"
             app:strokeColor="@color/black"
@@ -37,58 +37,65 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/cardViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textSize="18sp"
-                tools:text="sodastream" />
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Sodastream" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/cardViewExtraText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/greyText"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardViewTitle"
+                tools:text="This is some extra text that I added" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/coinIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="1dp"
+                android:src="@drawable/dollar_coin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cardViewPrice"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/cardViewPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:textAllCaps="true"
+                android:layout_marginStart="6dp"
                 android:textSize="18sp"
-                tools:text="1000 sek" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/coinIcon"
+                tools:text="1000 kr" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/cardViewWebsite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center"
-                android:textAllCaps="true"
-                android:textSize="18sp"
-                tools:text="www.google.com" />
-
-        </LinearLayout>
-
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/deleteImageView"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:backgroundTint="@color/banner_white"
+        android:src="@drawable/delete" />
 
 </com.google.android.material.card.MaterialCardView>

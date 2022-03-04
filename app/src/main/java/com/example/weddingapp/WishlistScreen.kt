@@ -1,32 +1,14 @@
 package com.example.weddingapp
 
 import android.annotation.SuppressLint
-import android.app.ProgressDialog
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.transition.TransitionManager
 import android.util.Log
-import android.view.*
-import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weddingapp.databinding.ActivityOnskelistaScreenBinding
-import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.firestore.*
-import android.net.Uri
-import android.util.AttributeSet
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.contract.ActivityResultContracts
-import androidx.fragment.app.Fragment
-import com.google.firebase.firestore.EventListener
-import com.google.firebase.storage.FirebaseStorage
-import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
-import kotlin.collections.HashMap
-
 
 class WishlistScreen : AppCompatActivity() {
 
@@ -41,13 +23,16 @@ class WishlistScreen : AppCompatActivity() {
         binding = ActivityOnskelistaScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         recyclerView = binding.wishlistRecyclerView
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         giftArrayList = arrayListOf()
         myAdapter = WishlistRecyclerViewAdapter(giftArrayList, this)
         recyclerView.adapter = myAdapter
 
+//        swipe()
         eventChangeListener()
         openButton()
     }
@@ -56,7 +41,6 @@ class WishlistScreen : AppCompatActivity() {
         binding.wishlistAddButton.setOnClickListener {
             val intent = Intent(this, GiftAddPopupWindow::class.java)
             startActivity(intent)
-
         }
     }
 
@@ -81,6 +65,20 @@ class WishlistScreen : AppCompatActivity() {
                 }
             })
     }
+
+//    private fun swipe(){
+//        val swipeGesture = object : SwipeGesture(this){
+//            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+//                when (direction){
+//                    ItemTouchHelper.LEFT -> {
+//                        myAdapter.deleteItem(viewHolder.absoluteAdapterPosition,)
+//                    }
+//                }
+//            }
+//        }
+//        val touchHelper = ItemTouchHelper(swipeGesture)
+//        touchHelper.attachToRecyclerView(recyclerView)
+//    }
 
     override fun finish() {
         super.finish()
